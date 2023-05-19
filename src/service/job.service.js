@@ -15,10 +15,10 @@ const jobService = {
         const { data } = await httpService.get(jobEndpoint, {
             params: {
                 published: 1,
-                keyword: payload.search,
-                payment_to: payload.paymentTo,
-                payment_from: payload.paymentFrom,
-                catalogues: payload.catalogues,
+                keyword: payload.search || ' ',
+                payment_to: payload.paymentTo || ' ',
+                payment_from: payload.paymentFrom || ' ',
+                catalogues: payload.catalogues || ' ',
             },
         });
         return data;
