@@ -18,9 +18,9 @@ const JobPage = () => {
         <Loader />
       ) : (
         <div>
-          {/* <JobCard {...data} /> */}
+          <JobCard {...data} />
 
-          {/* <div className={styles.Info}>{parse(data?.vacancyRichText)}</div> */}
+          <div className={styles.Info}>{parse(data?.vacancyRichText)}</div>
         </div>
       )}
     </div>
