@@ -45,7 +45,7 @@ const JobCard = ({
           : ""}
 
         <span className={style.JobCardType}>
-          {type_of_work.title && type_of_work.title}
+          {/* {type_of_work.title && type_of_work.title} */}
         </span>
       </p>
       <div className={style.JobCardLocation}>
