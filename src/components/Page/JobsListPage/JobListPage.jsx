@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import style from "./JobListPage.module.css";
 import GroupFilter from "../../GroupFilter/GroupFilter";
 import JobList from "../../JobList/JobList";
