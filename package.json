@@ -1,7 +1,6 @@
 {
   "name": "job",
   "version": "0.1.0",
-  "homepage": "https://vadimlelik.github.io/jobTest/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.0",
@@ -47,8 +46,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "gh-pages": "^5.0.0"
   }
 }
