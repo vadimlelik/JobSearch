@@ -44,7 +44,9 @@ const JobCard = ({
           ? `з/п от ${payment_from} до ${payment_to} - ${currency}`
           : ""}
 
-        <span className={style.JobCardType}>{type_of_work.title}</span>
+        <span className={style.JobCardType}>
+          {type_of_work.title && type_of_work.title}
+        </span>
       </p>
       <div className={style.JobCardLocation}>
         <LocationIcon />
