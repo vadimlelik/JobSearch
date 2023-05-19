@@ -1,0 +1,35 @@
+.SelectField {
+  padding: 12px;
+  margin-top: 8px;
+  background: #ffffff;
+  border: 1px solid #d5d6dc;
+  border-radius: 8px;
+  color: #acadb9;
+}
+.SelectFieldWrapper {
+  margin-bottom: 20px;
+}
+
+.Field {
+  margin-top: 8px;
+  width: 100%;
+  padding: 12px;
+  background: #ffffff;
+  border: 1px solid #d5d6dc;
+  border-radius: 8px;
+  color: #acadb9;
+}
+.FieldLabel {
+  color: #232134;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.Option {
+  padding: 8px 12px;
+  color: #232134;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}

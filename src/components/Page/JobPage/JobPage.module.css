@@ -1,0 +1,24 @@
+.JobPageWrapper {
+  max-width: 775px;
+  margin: 0 auto;
+  margin-top: 40px;
+  display: flex;
+}
+.Info {
+  margin-top: 20px;
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid #eaebed;
+  border-radius: 12px;
+}
+.Info > p {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  color: #232134;
+  margin-bottom: 16px;
+}
+.Info > ul {
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
