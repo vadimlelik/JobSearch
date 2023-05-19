@@ -8,13 +8,14 @@ import { Loader } from "@mantine/core";
 const JobList = () => {
   const data = useSelector(getJobs());
   const isJobsLoading = useSelector(getJobsIsLoading());
+  console.log(isJobsLoading);
   return (
     <div className={style.JobList}>
       {isJobsLoading ? (
         <Loader color="gray" size="xl" />
       ) : (
         <ul>
-          {data.objects?.map((job) => {
+          {data.objects.map((job) => {
             return <JobCard key={job.id} {...job} />;
           })}
         </ul>
