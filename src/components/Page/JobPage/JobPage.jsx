@@ -14,7 +14,7 @@ const JobPage = () => {
 
   return (
     <div className={styles.JobPageWrapper}>
-      {isJobsLoading ? (
+      {isJobsLoading && data?.vacancyRichText.length > 0 ? (
         <Loader />
       ) : (
         <div>
