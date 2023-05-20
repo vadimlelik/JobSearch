@@ -1,11 +1,11 @@
 import { Route, Routes } from "react-router-dom";
 import JobListPage from "./components/Page/JobsListPage";
 import Favorites from "./components/Page/Favorites";
-import JobPage from "./components/Page/JobPage";
 import style from "./App.module.css";
 import cn from "classnames";
 import AppLoader from "./components/Hoc/AppLoader";
 import Layout from "./layouts/Layout";
+import JobLayout from "./layouts/JobLayout";
 
 function App() {
   return (
@@ -13,8 +13,7 @@ function App() {
       <div className={cn(style.App)}>
         <Layout>
           <Routes>
-            <Route path="/" element={<JobListPage />} />
-            <Route path="/:id" element={<JobPage />} />
+            <Route path="/:id?/:edit?" element={<JobLayout />} />
             <Route path="/favorites" element={<Favorites />} />
           </Routes>
         </Layout>
