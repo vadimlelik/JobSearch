@@ -9,8 +9,14 @@ const Search = ({ value, onSearch, handleSearch }) => (
       placeholder="Введите название вакансии"
       value={value}
       onChange={(e) => onSearch(e.target.value)}
+      data-elem="search-input"
     />
-    <Button className={style.SearchButton} size="S" onClick={handleSearch}>
+    <Button
+      className={style.SearchButton}
+      size="S"
+      onClick={handleSearch}
+      data-elem="search-button"
+    >
       Поиск
     </Button>
     <SearchIcon className={style.SearchIcon} />

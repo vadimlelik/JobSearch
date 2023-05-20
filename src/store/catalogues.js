@@ -20,7 +20,7 @@ const vacanciesSlice = createSlice({
         },
         vacanciesRequestFailed: (state, action) => {
             state.error = action.payload;
-            state.isLoading = false;
+            state.isLoading = true;
         },
 
     },

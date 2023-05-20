@@ -1,11 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 import jobService from "../service/job.service";
 import industryService from "../service/industry.service";
+import authService from "../service/auth.service";
+import { setLocalStorage } from "../utils/localStorage";
 
 const initialState = {
     isLoading: true,
     entities: null,
     error: null,
+    isLogin: false,
+    authData: null
 };
 
 const jobsSlice = createSlice({
@@ -21,7 +25,7 @@ const jobsSlice = createSlice({
         },
         jobsRequestFailed: (state, action) => {
             state.error = action.payload;
-            state.isLoading = false;
+            state.isLoading = true;
         },
         searchRequested: (state) => {
             state.isLoading = true;
@@ -32,8 +36,21 @@ const jobsSlice = createSlice({
         },
         searchRequestFailed: (state, action) => {
             state.error = action.payload;
-            state.isLoading = false;
+            state.isLoading = true;
         },
+        loginRequested: (state) => {
+            state.isLogin = false
+        },
+        loginReceived: (state, action) => {
+            state.authData = action.payload;
+            state.isLogin = true
+            state.isLoading = true
+        },
+        loginFailed: (state, action) => {
+            state.isLogin = false
+            state.isLoading = true
+            state.error = action.payload
+        }
     },
 });
 
@@ -45,6 +62,9 @@ const {
     searchRequested,
     searchReceived,
     searchRequestFailed,
+    loginRequested,
+    loginReceived,
+    loginFailed
 } = actions;
 
 export const loadJobsList = () => async (dispatch) => {
@@ -66,7 +86,19 @@ export const searchJobsList = (payload) => async (dispatch) => {
     }
 };
 
+
+export const login = () => async (dispatch) => {
+    dispatch(loginRequested());
+    try {
+        const content = await authService.login();
+        setLocalStorage('token', content)
+        dispatch(loginReceived(content));
+    } catch (error) {
+        dispatch(loginFailed(error.message));
+    }
+};
 // selectors
+export const getIsLogin = () => (state) => state.jobs.isLogin
 export const getJobs = () => (state) => state.jobs.entities;
 export const getJobsIsLoading = () => (state) => state.jobs.isLoading;
 

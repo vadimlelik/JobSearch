@@ -34,7 +34,7 @@ const JobCard = ({
   }, [storeData[id]]);
 
   return (
-    <li className={style.JobCard}>
+    <li className={style.JobCard} data-elem={`vacancy-_vacancy_id_${id}`} _>
       <Link className={style.JobCardProfession} to={`/${id}`}>
         {profession}
         {firm_name}
@@ -55,6 +55,7 @@ const JobCard = ({
           [style.ActiveBookmark]: personFavorite,
         })}
         onClick={() => setCardFavorite(id)}
+        data-elem={`vacancy-_vacancy_id_${id}-shortlist-button`}
       />
     </li>
   );

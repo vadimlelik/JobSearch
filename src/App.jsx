@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import JobListPage from "./components/Page/JobsListPage";
 import Favorites from "./components/Page/Favorites";
 import style from "./App.module.css";
 import cn from "classnames";

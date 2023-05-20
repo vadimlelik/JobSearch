@@ -66,6 +66,7 @@ const GroupFilter = () => {
             rightSection={<ArrowIcon size="1rem" />}
             className={styles.Select}
             label="Отрасль"
+            data-elem="industry-select"
           />
           <NumberInput
             placeholder="От"
@@ -74,6 +75,7 @@ const GroupFilter = () => {
             label="Оклад"
             className={styles.NumberInput}
             hideControls
+            data-elem="salary-from-input"
             rightSection={<ArrowBtnIcon size="1rem" />}
           />
           <NumberInput
@@ -81,6 +83,7 @@ const GroupFilter = () => {
             value={paymentTo}
             onChange={setPaymentTo}
             hideControls
+            data-elem="search-input"
             rightSection={<ArrowBtnIcon size="1rem" />}
           />
 
