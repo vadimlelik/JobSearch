@@ -11,6 +11,8 @@
   color: #5e96fc;
   font-weight: 600;
   font-size: 20px;
+  display: inline-block;
+  max-width: 98%;
 }
 .JobCardCurrency {
   font-weight: 600;
@@ -19,7 +21,22 @@
   color: #232134;
 }
 .JobCardType {
+  position: relative;
   font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  margin-left: 33px;
+}
+.JobCardType::before {
+  position: absolute;
+  left: -12px;
+  bottom: 7px;
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background-color: #7b7c88;
+  border-radius: 20px;
 }
 .JobCardLocation {
   margin-top: 12px;

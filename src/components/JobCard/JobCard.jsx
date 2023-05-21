@@ -34,14 +34,16 @@ const JobCard = ({
   }, [storeData[id]]);
 
   return (
-    <li className={style.JobCard} data-elem={`vacancy-_vacancy_id_${id}`} _>
+    <li className={style.JobCard} data-elem={`vacancy-_vacancy_id_${id}`}>
       <Link className={style.JobCardProfession} to={`/${id}`}>
         {profession}
         {firm_name}
       </Link>
       <p className={style.JobCardCurrency}>
-        {payment_from
+        {payment_from && payment_to
           ? `з/п от ${payment_from} до ${payment_to} - ${currency}`
+          : payment_from
+          ? `от ${payment_from}`
           : ""}
 
         <span className={style.JobCardType}>{type_of_work.title}</span>

@@ -87,7 +87,12 @@ const GroupFilter = () => {
             rightSection={<ArrowBtnIcon size="1rem" />}
           />
 
-          <Button className={styles.BtnForm} size="M" type="submit">
+          <Button
+            className={styles.BtnForm}
+            size="M"
+            data-elem="search-button"
+            type="submit"
+          >
             Применить
           </Button>
         </form>
