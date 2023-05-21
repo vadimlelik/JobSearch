@@ -1,35 +1,26 @@
 import { useEffect } from "react";
-
 import { useDispatch, useSelector } from "react-redux";
-import {
-  getIsLogin,
-  getJobsIsLoading,
-  loadJobsList,
-  login,
-} from "../../store/jobs";
 import { getVacanciesIsLoading, loadCatalogList } from "../../store/catalogues";
+import { getIsLogin, getJobsIsLoading, loadJobsList } from "../../store/jobs";
 import { Loader } from "@mantine/core";
 
-const AppLoader = ({ children }) => {
+const AppLoadData = ({ children }) => {
+  const isLogin = useSelector(getIsLogin());
   const dispatch = useDispatch();
   const isVacanciesLoading = useSelector(getVacanciesIsLoading());
   const isJobsLoading = useSelector(getJobsIsLoading());
-  const isLogin = useSelector(getIsLogin());
-
   useEffect(() => {
-    if (!isLogin) {
-      dispatch(login());
-    } else {
+    if (isLogin) {
       dispatch(loadCatalogList());
       dispatch(loadJobsList());
     }
-  }, [dispatch, isLogin]);
+  }, [isLogin]);
 
-  if (isJobsLoading && isVacanciesLoading) {
+  if (isVacanciesLoading && isJobsLoading) {
     return <Loader />;
   } else {
     return children;
   }
 };
 
-export default AppLoader;
+export default AppLoadData;
