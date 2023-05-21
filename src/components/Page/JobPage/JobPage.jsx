@@ -12,19 +12,21 @@ const JobPage = () => {
   const data = useSelector(getByIdJobsData(id));
   const isJobsLoading = useSelector(getJobsIsLoading());
 
-  return (
-    <div className={styles.JobPageWrapper}>
-      {isJobsLoading && data?.vacancyRichText.length > 0 ? (
-        <Loader />
-      ) : (
-        <div>
-          <JobCard {...data} />
+  if (data) {
+    return (
+      <div className={styles.JobPageWrapper}>
+        {isJobsLoading && data?.vacancyRichText.length > 0 ? (
+          <Loader />
+        ) : (
+          <div>
+            <JobCard {...data} />
 
-          <div className={styles.Info}>{parse(data?.vacancyRichText)}</div>
-        </div>
-      )}
-    </div>
-  );
+            <div className={styles.Info}>{parse(data?.vacancyRichText)}</div>
+          </div>
+        )}
+      </div>
+    );
+  }
 };
 
 export default JobPage;
