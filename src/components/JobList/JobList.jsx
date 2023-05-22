@@ -12,7 +12,7 @@ const JobList = () => {
   return (
     <div className={style.JobList}>
       {isJobsLoading ? (
-        <Loader color="gray" size="xl" />
+        <Loader color="gray" size="xl" className={style.Loader} />
       ) : (
         <ul>
           {data.objects.map((job) => {

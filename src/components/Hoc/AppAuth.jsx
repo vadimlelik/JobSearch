@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getIsLogin, login } from "../../store/jobs";
 import { Loader } from "@mantine/core";
+import styles from "../../App.module.css";
 
 const AppAuth = ({ children }) => {
   const dispatch = useDispatch();
@@ -15,7 +16,7 @@ const AppAuth = ({ children }) => {
   }, [dispatch, isLogin]);
 
   if (!isLogin) {
-    return <Loader />;
+    return <Loader color="gray" className={styles.Loader} />;
   } else {
     return children;
   }

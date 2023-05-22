@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getVacanciesIsLoading, loadCatalogList } from "../../store/catalogues";
 import { getIsLogin, getJobsIsLoading, loadJobsList } from "../../store/jobs";
 import { Loader } from "@mantine/core";
+import styles from "../../App.module.css";
 
 const AppLoadData = ({ children }) => {
   const isLogin = useSelector(getIsLogin());
@@ -17,7 +18,7 @@ const AppLoadData = ({ children }) => {
   }, [isLogin]);
 
   if (isVacanciesLoading && isJobsLoading) {
-    return <Loader />;
+    return <Loader color="gray" className={styles.Loader} />;
   } else {
     return children;
   }

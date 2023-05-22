@@ -16,7 +16,7 @@ const JobPage = () => {
     return (
       <div className={styles.JobPageWrapper}>
         {isJobsLoading && data?.vacancyRichText.length > 0 ? (
-          <Loader />
+          <Loader className={styles.Loader} />
         ) : (
           <div>
             <JobCard {...data} />
