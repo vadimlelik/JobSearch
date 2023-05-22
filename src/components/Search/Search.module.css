@@ -1,32 +1,27 @@
 .SearchInput {
-    width: 100%;
-    background: #ffffff;
-    border: 1px solid #eaebed;
-    border-radius: 8px;
-    color: #acadb9;
-    padding: 13px 36px;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #eaebed;
+  border-radius: 8px;
+  color: #232134;
+  font-size: 14px;
+  line-height: 21px;
+  padding: 13px 36px;
+}
+.SearchInput::placeholder {
+  color: #acadb9;
 }
 .SearchButton {
-    position: absolute;
-    top: 5px;
-    right: 10px;
+  position: absolute;
+  top: 9px;
+  right: 10px;
 }
 .SearchInputWrapper {
-    grid-area: search;
-    position: relative;
+  grid-area: search;
+  position: relative;
 }
 .SearchIcon {
-    position: absolute;
-    top: 14px;
-    left: 14px;
-}
-
-@media (max-width: 765px) {
-    .FormWrapper {
-        /* grid-template-columns: minmax(320px, 1fr);
-        grid-template-areas:
-            "form"
-            "search"
-            "list"; */
-    }
+  position: absolute;
+  top: 14px;
+  left: 14px;
 }

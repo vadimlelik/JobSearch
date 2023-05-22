@@ -42,6 +42,7 @@ const GroupFilter = () => {
         keyword: searchQuery,
       })
     );
+    setSearchQuery("");
   };
   const handleReset = () => {
     setValue("");
@@ -85,6 +86,7 @@ const GroupFilter = () => {
             hideControls
             data-elem="search-input"
             rightSection={<ArrowBtnIcon size="1rem" />}
+            className={styles.NumberInput}
           />
 
           <Button

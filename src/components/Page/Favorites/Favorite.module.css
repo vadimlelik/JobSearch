@@ -1,10 +1,10 @@
 .FavoriteWrapper {
   min-height: calc(100vh - 84px);
-  margin: 0 auto;
+  gap: 15px 15px;
+  display: grid;
+  grid-template-columns: auto minmax(320px, 773px) auto;
+  grid-template-areas: " . list .";
 }
 .List {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  flex-direction: column;
+  grid-area: list;
 }
